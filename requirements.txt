@@ -6,4 +6,5 @@ scikit-learn
 dill
 statsmodels
 scipy
+Flask
 -e .

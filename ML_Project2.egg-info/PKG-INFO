@@ -11,3 +11,4 @@ Requires-Dist: scikit-learn
 Requires-Dist: dill
 Requires-Dist: statsmodels
 Requires-Dist: scipy
+Requires-Dist: Flask

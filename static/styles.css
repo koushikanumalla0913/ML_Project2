@@ -1,0 +1,75 @@
+/* styles.css */
+
+body {
+    background: #f2f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+h1 {
+    text-align: center;
+    color: #2d3e50;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.25rem;
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 25px;
+}
+
+label.form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+input.form-control,
+select.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 1px solid #ccd6dd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+input.form-control:focus,
+select.form-control:focus {
+    border-color: #3f72af;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #3f72af;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #2e5c8b;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #1b4f72;
+}
