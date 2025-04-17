@@ -22,11 +22,27 @@ class DataTransformation:
 
     def get_data_transformer_object(self):
         try:
-            num_cols = ["writing_score", "reading_score"]
-            cat_cols = [
-                "gender", "race_ethnicity", "parental_level_of_education",
-                "lunch", "test_preparation_course"
+            num_cols = [
+                "age",
+                "balance",
+                "day",
+                "duration",
+                "campaign",
+                "pdays",
+                "previous",
             ]
+            cat_cols = [
+                "job",
+                "marital",
+                "default",
+                "housing",
+                "loan",
+                "contact",
+                "month",
+                "poutcome"
+            ]
+                 
+            
 
             num_pipeline = Pipeline([
                 ("imputer", SimpleImputer(strategy="median")),
