@@ -9,3 +9,5 @@ Requires-Dist: seaborn
 Requires-Dist: matplotlib
 Requires-Dist: scikit-learn
 Requires-Dist: dill
+Requires-Dist: statsmodels
+Requires-Dist: scipy
