@@ -4,8 +4,9 @@ from dataclasses import dataclass
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import accuracy_score
-
-
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object, evaluate_models
@@ -43,15 +44,28 @@ class ModelTrainer:
             if best_score < 0.6:
                 raise CustomException("No suitable KNN model found")
 
-            # Train final model using the best k
+            
             best_model = KNeighborsClassifier(n_neighbors=best_k)
             best_model.fit(X_train, y_train)
 
-            # Save the trained model
+         
             save_object(self.config.trained_model_file_path, best_model)
 
-            # Evaluate on test set
+            
             y_pred = best_model.predict(X_test)
+            cm = confusion_matrix(y_test, y_pred)
+
+            
+            logging.info(f"Confusion Matrix for k={best_k}:\n{cm}")
+
+            
+            plt.figure(figsize=(8, 6))
+            sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=['No', 'Yes'], yticklabels=['No', 'Yes'])
+            plt.title(f"Confusion Matrix for k={best_k}")
+            plt.xlabel('Predicted')
+            plt.ylabel('Actual')
+            plt.tight_layout()
+            plt.show()
             final_accuracy = accuracy_score(y_test, y_pred)
             logging.info(f"Final test accuracy: {final_accuracy:.4f}")
 
